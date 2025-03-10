@@ -18,17 +18,17 @@ describe("API Orders Test", () => {
     });
   });
 
-  it("should returns 403 if the user is not connected", () => {
+  it("Retourne 401 si l'utilisateur est pas autorisé", () => {
     cy.request({
       method: "GET",
       url: apiUrl,
       failOnStatusCode: false,
     }).then((response) => {
-      expect(response.status).to.eq(403); // retourne 401 d'apres la doc donc anomalie
+      expect(response.status).to.eq(401); // doit retourner 403 donc Anomalie
     });
   });
 
-  it("should retrieve the cart", () => {
+  it("Doit récuperer le panier", () => {
     cy.request({
       method: "GET",
       url: "/orders",
@@ -43,9 +43,9 @@ describe("API Orders Test", () => {
     });
   });
 
-  it('add specific out of stock product in the cart', () => {
+  it('Rajoute un objet indisponible dans le panier', () => {
     cy.request({
-      method: "PUT", //anomaly
+      method: "PUT", //anomalie
       url:"/orders/add",
       headers: {
         Authorization:`Bearer ${authToken}`,
@@ -55,7 +55,7 @@ describe("API Orders Test", () => {
         "product": 4
       }
     }).then((response) => {
-      expect(response.status).to.eq(200);//this is an anomaly
+      expect(response.status).to.eq(200);//Ne doit pas etre possible donc Anomalie
       const expectedProduct = {
         "name": "Chuchotements d'été",
         "description": "Savon surgras à l'huile d'olive, particulièrement utile contre la peau sèche.",
@@ -70,7 +70,7 @@ describe("API Orders Test", () => {
   });
   let cartId;
 
-  it("empty the cart", () => {
+  it("Vide le panier", () => {
     cy.request({
       method: "DELETE",
       url: `/orders/${cartId}/delete`,
@@ -83,16 +83,16 @@ describe("API Orders Test", () => {
   });
 
  context(
-    "should adds a product in the cart, update quantity and delete him",
+    "sAjoute un produit, change la quantité dans le panier et vide le panier",
     () => {
       const randomQuantity = faker.number.int({ min: 1, max: 10 });
       let productId;
       let cartId;
 
-      it("should returns a random product", () => {
+      it("Renvoie un produit aleatoire", () => {
         cy.request({
           method: "GET",
-          url: "http://localhost:8081/products/",
+          url: "/products/",
           headers: {
             Authorization:`Bearer ${authToken}`,
           },
@@ -103,7 +103,7 @@ describe("API Orders Test", () => {
         });
       });
 
-      it("should adds the product in the cart", () => {
+      it("Rajoute le produit au paniert", () => {
         cy.request({
           method: "PUT", // devrait etre POST, anomalie
           url: "/orders/add",
@@ -121,7 +121,7 @@ describe("API Orders Test", () => {
         });
       });
 
-      it("should changes the quantity of the product order", () => {
+      it("Change la quantité du produit dans le panier", () => {
         cy.request({
           method: "PUT",
           url: `/orders/${cartId}/change-quantity`,
@@ -136,7 +136,7 @@ describe("API Orders Test", () => {
         });
       });
 
-      it("empty the cart", () => {
+      it("Vide le panier", () => {
         cy.request({
           method: "DELETE",
           url: `/orders/${cartId}/delete`,

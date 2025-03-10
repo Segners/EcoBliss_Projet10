@@ -22,6 +22,7 @@ describe("Tests inscription", () => {
       expect(response.body.email).to.eq(userData.email);
     });
   });
+  
   // Test d'erreurs de validation
   describe("Cas d'erreur d'inscription", () => {
     const testCases = [

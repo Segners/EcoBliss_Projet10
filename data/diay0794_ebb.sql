@@ -125,7 +125,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `available_stock`, `skin`, `aromas`, `ingredients`, `description`, `price`, `picture`, `varieties`) VALUES
-(3, 'Sentiments printaniers', 1, 'Propre, fraîche', 'Frais et fruité', 'Framboise, zeste de citron et feuille de menthe', 'Savon avec une formule douce à base d’huile de framboise, de citron et de menthe qui nettoie les mains efficacement sans les dessécher.', 60, 'https://cdn.pixabay.com/photo/2020/02/08/10/35/soap-4829708_960_720.jpg', 4),
+(3, 'Sentiments printaniers', -8, 'Propre, fraîche', 'Frais et fruité', 'Framboise, zeste de citron et feuille de menthe', 'Savon avec une formule douce à base d’huile de framboise, de citron et de menthe qui nettoie les mains efficacement sans les dessécher.', 60, 'https://cdn.pixabay.com/photo/2020/02/08/10/35/soap-4829708_960_720.jpg', 4),
 (4, 'Chuchotements d\'été', 0, 'Sèche', 'Nature et végétal', 'Huile d\'olive, glycérine végétale', 'Savon surgras à l\'huile d\'olive, particulièrement utile contre la peau sèche.', 37, 'https://cdn.pixabay.com/photo/2017/09/07/19/43/soap-2726387_960_720.jpg', 6),
 (5, 'Poussière de lune', 23, 'Peau grasse', 'Musc', 'Huiles végétales', 'Essayez notre savon aujourd\'hui pour une expérience de bain rafraîchissante et revitalisante.', 9.99, 'https://cdn.pixabay.com/photo/2016/07/11/15/45/soap-1509963_960_720.jpg', 6),
 (6, 'Dans la forêt', 12, 'Peau mixte', 'Bois de santal', 'Soude caustique', 'La mousse riche et onctueuse nettoie en profondeur en laissant votre peau douce et hydratée.', 24, 'https://cdn.pixabay.com/photo/2015/01/06/02/56/soap-589824_960_720.jpg', 9),

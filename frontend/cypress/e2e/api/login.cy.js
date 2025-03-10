@@ -2,7 +2,7 @@
 
 describe("API Login Test", () => {
     const apiUrl = "/login";
-    it("should log in successfully with valid email and password", () => {
+    it("Doit pouvoir se connecter avec adresse et mot de passe valide", () => {
       cy.request({
         method: "POST",
         url: apiUrl,
@@ -17,7 +17,7 @@ describe("API Login Test", () => {
       });
     });
   
-    it("should fail to log in with invalid email and password", () => {
+    it("Ne doit pas pouvoir se connecter avec adresse et mot de passe invalide", () => {
       cy.request({
         method: "POST",
         url: apiUrl,
@@ -31,7 +31,7 @@ describe("API Login Test", () => {
       });
     });
   
-    it("should return 400 for invalid JSON", () => {
+    it("Doit retourner 400 pour invalid JSON", () => {
       cy.request({
         method: "POST",
         url: apiUrl,

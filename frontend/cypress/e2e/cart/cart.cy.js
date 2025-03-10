@@ -5,12 +5,12 @@ const negativeNumber = faker.number.int({
   max: -1 
 });
 
-describe('Cart tests', () => {
+describe('Tests du panier', () => {
   beforeEach(() => {
       cy.Connect()
       cy.url().should('include', '/');
   })
-  it('should add a product with valid stock in the cart and update stock', () => {
+  it('Doit ajouter un produit avec un stock valide dans le panier et mettre à jour le stock', () => {
       cy.getBySel('product-home-link').first().click();
     
       cy.url().then((productPage) => {
@@ -35,7 +35,7 @@ describe('Cart tests', () => {
       cy.getBySel('cart-line-delete').click({ multiple : true })
     });
 
-  it('shouldn\'t change the cart with negative number', () => {
+  it('Ne doit pas changer le panier avec un nombre négatif', () => {
     cy.getBySel('product-home-link').first().click();
     cy.getBySel('detail-product-quantity').clear().type(negativeNumber);
     cy.getBySel('detail-product-add').click();
@@ -43,10 +43,10 @@ describe('Cart tests', () => {
   });
   
  
-  it('shouldn\'t change the cart with 20+ number', () => {
+  it('Ne devrait pas changer le panier avec un nombre 20+', () => {
     cy.getBySel('product-home-link').first().click()
     cy.getBySel('detail-product-quantity').clear().type(21)
     cy.getBySel('detail-product-add').click()
-    cy.getBySel('detail-product-form').should('have.class', 'ng-invalid')
+    cy.getBySel('detail-product-form').should('have.class', 'ng-invalid') // Erreur
   })
 })

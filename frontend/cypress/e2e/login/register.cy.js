@@ -1,7 +1,7 @@
 
 import { faker } from '@faker-js/faker'
 
-describe('registration for user', () => {
+describe('Inscription', () => {
 
     it('shouldnt register a user because he\'s already used', () => {
         cy.visit('http://localhost:8080/#/register')
@@ -16,8 +16,8 @@ describe('registration for user', () => {
 
 }); 
 
-describe('registration with invalid mail', () => {
-    it('shouldnt register a user with a mail without @', () => {
+describe('Inscription avec mail invalide', () => {
+    it('Ne devrait pas enregistrer un utilisateur avec un mail sans @', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -29,7 +29,7 @@ describe('registration with invalid mail', () => {
         cy.getBySel('register-errors').should('exist')
     })
 
-    it('shouldnt register a user with a mail without domain', () => {
+    it('Ne devrait pas enregistrer un utilisateur avec un e-mail sans domaine', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -41,7 +41,7 @@ describe('registration with invalid mail', () => {
         cy.getBySel('register-errors').should('exist')
     })
 
-    it('shouldnt register a user with a mail with special caract', () => {
+    it('Ne devrait pas enregistrer un utilisateur avec un mail contenant un caractère spécial', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -53,7 +53,7 @@ describe('registration with invalid mail', () => {
         cy.getBySel('register-errors').should('exist')
     })
 
-    it('shouldnt register a user with a mail without name', () => {
+    it('Ne devrait pas enregistrer un utilisateur avec un mail sans nom', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -65,7 +65,7 @@ describe('registration with invalid mail', () => {
         cy.getBySel('register-errors').should('exist')
     })
 
-    it('shouldnt register without mail', () => {
+    it('Ne devrait pas s\'inscrire sans courrier', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -80,7 +80,7 @@ describe('registration with invalid mail', () => {
     })
 })
 
-describe('registration with invalid password', () => {
+describe('Inscription avec mot de passe invalide', () => {
     it('shouldnt register because too short', () => {
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -92,7 +92,7 @@ describe('registration with invalid password', () => {
         cy.getBySel('register-errors').should('exist')
     })
 
-    it('shouldnt register without password', () => {
+    it('Ne devrait pas s\'inscrire sans mot de passe', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -105,7 +105,7 @@ describe('registration with invalid password', () => {
         })
     })
 
-    it('shouldnt register without password confirmation', () => {
+    it('Ne devrait pas s\'inscrire sans confirmation de mot de passe', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -118,7 +118,7 @@ describe('registration with invalid password', () => {
         })
     })
 
-    it('shouldnt register if password and password confirmation arent the same', () => {
+    it('Ne doit pas s\'inscrire si le mot de passe et la confirmation du mot de passe ne sont pas identiques', () => {
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
         cy.getBySel('register-input-firstname').type(faker.person.firstName())
@@ -130,8 +130,8 @@ describe('registration with invalid password', () => {
     })
 })
 
-describe('registration without firstname', () => {
-    it('shouldnt register', () => {
+describe('Inscription sans prenom', () => {
+    it('Ne devrais pas s\'inscrire', () => {
         const password = faker.internet.password();
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
@@ -144,11 +144,11 @@ describe('registration without firstname', () => {
             expect(className).to.include('error');
         })
     })
-});
+})
 
-describe('registration without lastname', () => {
+describe('Inscription sans nom', () => {
     const password = faker.internet.password();
-    it('shouldnt register', () => {
+    it('Ne devrais pas s\'inscrire', () => {
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-firstname').type(faker.person.firstName())
         cy.getBySel('register-input-email').type(faker.internet.email())
