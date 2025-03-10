@@ -12,7 +12,7 @@ Dans ce projet, ma mission est d'automatiser les tests fonctionnels pour le site
 |📦 [Installation](#installation)|
 |🚀 [Utilisation](#utilisation)|
 |📄 ️[Génération des rapports](#rapports)|
-|
+||
 ## Installation
 
 ### **Prérequis**
