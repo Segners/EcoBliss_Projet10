@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker'
 
 describe('Inscription', () => {
 
-    it('shouldnt register a user because he\'s already used', () => {
+    it('Ne devrait pas enregistrer un utilisateur car il est déjà utilisé', () => {
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type('Test3')
         cy.getBySel('register-input-firstname').type('T3')
@@ -81,7 +81,7 @@ describe('Inscription avec mail invalide', () => {
 })
 
 describe('Inscription avec mot de passe invalide', () => {
-    it('shouldnt register because too short', () => {
+    it('Ne devrait pas s\'inscrire car mdp trop court', () => {
         cy.visit('http://localhost:8080/#/register')
         cy.getBySel('register-input-lastname').type(faker.person.lastName())
         cy.getBySel('register-input-firstname').type(faker.person.firstName())
