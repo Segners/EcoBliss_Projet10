@@ -11,8 +11,8 @@ Dans ce projet, ma mission est d'automatiser les tests fonctionnels pour le site
 |-------|
 |📦 [Installation](#installation)|
 |🚀 [Utilisation](#utilisation)|
-|📄 ️[Génération des rapports](#génération-des-rapports)|
-||
+|📄 ️[Génération des rapports](#rapports)|
+|
 ## Installation
 
 ### **Prérequis**
@@ -27,7 +27,7 @@ Dans ce projet, ma mission est d'automatiser les tests fonctionnels pour le site
 ### **Installation**
 - Installer **NodejS**
 
-- Depuis un terminal ouvert dans le dossier du projet, lancer la commande (utilise sudo si sous linux) :
+- Depuis un terminal ouvert dans le dossier du projet, lancer la commande (utiliser sudo si sous linux) :
 
 ```bash 
 docker-compose up --build
@@ -102,7 +102,7 @@ Les tests automatisés couvrent les fonctionnalités critiques de l'application 
  ```
 Cliquez sur un des tests pour l'exécuter :
 ![alt text](image-1.png)
- ## Génération des rapports :
+ ## Rapports :
  ```bash 
 npx cypress run --reporter mochawesome
  ```
