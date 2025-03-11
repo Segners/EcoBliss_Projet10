@@ -102,7 +102,8 @@ Les tests automatisés couvrent les fonctionnalités critiques de l'application 
  ```
 Cliquez sur un des tests pour l'exécuter :
 ![alt text](images/image-1.png)
- ## Rapports :
+
+ ## Rapports
  ```bash 
 npx cypress run --reporter mochawesome
  ```
