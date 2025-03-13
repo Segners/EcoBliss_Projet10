@@ -42,11 +42,10 @@ describe('Tests du panier', () => {
     cy.getBySel('detail-product-form').should('have.class', 'ng-invalid');
   });
   
- 
   it('Ne devrait pas changer le panier avec un nombre 20+', () => {
     cy.getBySel('product-home-link').first().click()
     cy.getBySel('detail-product-quantity').clear().type(21)
     cy.getBySel('detail-product-add').click()
-    cy.getBySel('detail-product-form').should('have.class', 'ng-invalid') // Erreur
+    cy.getBySel('detail-product-form').should('have.class', 'ng-invalid') //Erreur
   })
 })

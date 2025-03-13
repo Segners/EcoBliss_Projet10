@@ -13,7 +13,6 @@ describe('Inscription', () => {
         cy.getBySel('register-submit').click()
         cy.getBySel('register-errors').should('exist')
     })
-
 }); 
 
 describe('Inscription avec mail invalide', () => {

@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-03-10T21:25:42.272Z",
-    "end": "2025-03-10T21:25:44.549Z",
-    "duration": 2277,
+    "start": "2025-03-11T23:23:01.461Z",
+    "end": "2025-03-11T23:23:03.734Z",
+    "duration": 2273,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d1c1d41e-b218-4859-b8a8-a29cde6e262d",
+      "uuid": "21d45d52-c8b5-4639-8127-ea6ba6b117b3",
       "title": "",
       "fullFile": "cypress\\e2e\\smoke_test\\smoke_test.cy.js",
       "file": "cypress\\e2e\\smoke_test\\smoke_test.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d77fb1d3-abd3-4d70-9c98-076f74345935",
+          "uuid": "0fcf4a30-341e-4700-aaae-010b1ff4a7d3",
           "title": "Smoke test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Présence des champs et boutons de connexion",
               "fullTitle": "Smoke test Présence des champs et boutons de connexion",
               "timedOut": null,
-              "duration": 544,
+              "duration": 491,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.visit('http://localhost:8080/#/');\ncy.getBySel('nav-link-register').should('be.visible');\ncy.getBySel('nav-link-login').should('be.visible').click();\ncy.getBySel('login-input-username').should('be.visible');\ncy.getBySel('login-input-password').should('be.visible');\ncy.getBySel('login-submit').should('be.visible');",
               "err": {},
-              "uuid": "6a84aa8b-957b-4573-88c8-8c820b8d87e8",
-              "parentUUID": "d77fb1d3-abd3-4d70-9c98-076f74345935",
+              "uuid": "8ab4887c-4522-4c87-9248-cbba6a33ba88",
+              "parentUUID": "0fcf4a30-341e-4700-aaae-010b1ff4a7d3",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Présence des boutons d'ajout au panier quand connecté et présence du champ de disponibilité du produit",
               "fullTitle": "Smoke test Présence des boutons d'ajout au panier quand connecté et présence du champ de disponibilité du produit",
               "timedOut": null,
-              "duration": 835,
+              "duration": 865,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "cy.visit('http://localhost:8080/#/login');\ncy.getBySel('login-input-username').type(username);\ncy.getBySel('login-input-password').type(password);\ncy.getBySel('login-submit').click();\ncy.visit('http://localhost:8080/#/products/3');\ncy.getBySel('detail-product-stock').should('be.visible');\ncy.getBySel('detail-product-price').should('be.visible');\ncy.getBySel('detail-product-quantity').should('be.visible');\ncy.getBySel('detail-product-add').should('be.visible').should('not.be.disabled'); // Anomalie, doit etre desactivé",
               "err": {},
-              "uuid": "eb884906-462f-4636-955d-0227d8eeefd8",
-              "parentUUID": "d77fb1d3-abd3-4d70-9c98-076f74345935",
+              "uuid": "7c399f73-4f4e-4b8b-8351-4bd4e08e8c29",
+              "parentUUID": "0fcf4a30-341e-4700-aaae-010b1ff4a7d3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "6a84aa8b-957b-4573-88c8-8c820b8d87e8",
-            "eb884906-462f-4636-955d-0227d8eeefd8"
+            "8ab4887c-4522-4c87-9248-cbba6a33ba88",
+            "7c399f73-4f4e-4b8b-8351-4bd4e08e8c29"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1379,
+          "duration": 1356,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

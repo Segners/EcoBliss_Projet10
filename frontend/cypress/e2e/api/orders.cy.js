@@ -70,7 +70,17 @@ describe("API Orders Test", () => {
     });
   });
 
-
+  it("Vide le panier", () => {
+    cy.request({
+      method: "DELETE",
+      url: `/orders/${cartId}/delete`,
+      headers: {
+        Authorization:`Bearer ${authToken}`,
+      },
+    }).then((response) => {
+      expect(response.status).to.be.eq(200);
+    });
+  });
 
  context(
     "Ajoute un produit, change la quantité dans le panier et vide le panier",
